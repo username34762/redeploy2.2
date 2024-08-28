@@ -50,9 +50,12 @@ export function ListPlaces(props: ListPlacesProps) {
                                     <span className="text-lg font-semibold">{rating}</span>
                                     <FaStar className="ml-1" />
                                 </div>
+                               <Link href={`/places/${id}`}>
                                 <button className="flex items-center justify-center bg-green-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">
-                                    GO <FaSuitcase className="ml-1" />
+                                    GO <FaSuitcase className="ml-1" /> 
                                 </button>
+                                </Link>
+                               
                                 {userId ? (
                                     <Heart className={`mt-2 cursor-pointer ${likedPlace && "fill-black"}`} onClick={likedPlace ? () => removeLovedItem(place.id) : () => addLovedItem(place)} />
                                 ) : (
