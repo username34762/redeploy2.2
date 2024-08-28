@@ -15,8 +15,8 @@ export function NavBar(){
                 
             </Link>
             <div className="flex items-center justify-center gap-x-7">
-                <Link href="/places">List Places</Link>
-                <Link href="/dashboard">Dashboard</Link>
+                <Link href="/places" className=" relative after:bg-[#4fb350] after:absolute after:h-0.5 after:rounded-full after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300">List Places</Link>
+                <Link href="/dashboard" className=" relative after:bg-[#4fb350] after:absolute after:h-0.5 after:rounded-full after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300">Dashboard</Link>
                 {userId?(
                     <>
                     <Link href="/loved-places">
