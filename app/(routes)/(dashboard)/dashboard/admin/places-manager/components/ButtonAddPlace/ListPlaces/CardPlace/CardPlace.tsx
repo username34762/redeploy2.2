@@ -60,7 +60,9 @@ export function CardPlace(props: CardPlaceProps){
         <div key={place.id} className=" relative p-1  rounded-3xl  shadow-md hover:shadow-lg">
         
         <div className="p-4">
-        <Image src={place.photo} alt={place.name} width={400} height={500} className="rounded-lg" />
+        <div className="h-[150px] overflow-hidden rounded-3xl">
+                  <Image src={place.photo} alt={place.name} width={400} height={200} className="object-cover w-full h-full" />
+                </div>
         {place.isPublish? (
             <p className="absolute top-0 right-0 w-full p-1 text-center text-white bg-green-600 rounded-t-lg">
                 Published</p>
