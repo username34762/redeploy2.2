@@ -36,6 +36,11 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
     Saturday: "8:00 AM - 4:00 PM",
     Sunday: "8:00 AM - 6:00 PM",
   };
+  const handleGoClick = () => {
+    const encodedPlace = encodeURIComponent(place.name);
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedPlace}`;
+    window.open(mapsUrl, '_blank');
+  };
 
   return (
     <>
@@ -105,7 +110,7 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
     {place.ubication}
   </p>
   
-  <Button className="w-full py-2 rounded-3xl mt-6 bg-[#4fb350]" variant="ghost">
+  <Button className="w-full py-2 rounded-3xl mt-6 bg-[#4fb350]" variant="ghost" onClick={handleGoClick}>
     GO
   </Button>
   

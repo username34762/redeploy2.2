@@ -70,7 +70,7 @@ export function CardPlace(props: CardPlaceProps){
         ) }
 
           <div className="font-bold text-lg mb-1">{place.name}</div>
-          <p className="text-gray-700 text-sm mb-2">{place.description}</p>
+          
           
           <div className="flex items-center">
           <MapPin className="mb-2 ml-1 mr-1 w-4 h-4" />
