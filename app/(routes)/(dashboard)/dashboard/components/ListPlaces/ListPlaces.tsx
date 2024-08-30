@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaStar, FaSuitcase, FaHeart } from 'react-icons/fa';
 import { MapPin ,Heart} from "lucide-react";
 import { useLovedPlaces } from "@/hooks/use-loved-places";
+import Link from "next/link";
 
 
 export function ListPlaces(props:ListPlacesProps){
@@ -17,7 +18,7 @@ export function ListPlaces(props:ListPlacesProps){
             const likedPlace= lovedItems.some((item)=> item.id=== place.id);
             return(
                 <div key={id} className="p-1 rounded-3xl shadow-md hover:shadow-lg">
-                    <Image src={photo} alt={name} width={400} height={600} className="rounded-3xl"></Image>
+                    <Image src={photo} alt={name} width={400} height={500} className="rounded-3xl"></Image>
                     <div className="p-3">
                         <div className="flex flex-col mb-3 gap-x-4">
                             <p className="text-xl min-h-16 lg:min-h-fit">{name}</p>
@@ -32,9 +33,11 @@ export function ListPlaces(props:ListPlacesProps){
                             <span className="text-lg font-semibold">{place.rating}</span>
                             <FaStar className="ml-1" />
                         </div>
+                        <Link href={`/places/${id}`}>
                             <button className="flex items-center justify-center bg-green-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">
                             GO <FaSuitcase className="ml-1" />
                             </button>
+                            </Link>
                             <Heart className={`mt-2 cursor-pointer ${likedPlace && "fill-black"}` } onClick={likedPlace ? ()=>removeLovedItem(place.id) : ()=>addLovedItem(place)} />
                          </div>
                     </div>

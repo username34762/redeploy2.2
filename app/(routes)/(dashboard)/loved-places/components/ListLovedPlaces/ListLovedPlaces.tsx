@@ -20,7 +20,7 @@ export default function ListLovedPlaces(){
 
                 return(
                     <div key={id} className="p-1 rounded-3xl shadow-md hover:shadow-lg">
-                    <Image src={photo} alt={name} width={400} height={600} className="rounded-3xl"></Image>
+                    <Image src={photo} alt={name} width={400} height={500} className="rounded-3xl"></Image>
                     <div className="p-3">
                         <div className="flex flex-col mb-3 gap-x-4">
                             <p className="text-xl min-h-16 lg:min-h-fit">{name}</p>

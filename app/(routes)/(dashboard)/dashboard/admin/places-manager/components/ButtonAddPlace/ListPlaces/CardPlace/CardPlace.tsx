@@ -35,11 +35,11 @@ export function CardPlace(props: CardPlaceProps){
         await axios.patch(`/api/place/${place.id}`, {isPublish:publish});
         if(publish){
           toast({
-            title:"Car published"
+            title:"Place published"
           })
         } else{
           toast({
-            title:"Car unpublish"
+            title:"Place unpublish"
           })
         }
         router.refresh();
@@ -60,7 +60,7 @@ export function CardPlace(props: CardPlaceProps){
         <div key={place.id} className=" relative p-1  rounded-3xl  shadow-md hover:shadow-lg">
         
         <div className="p-4">
-        <Image src={place.photo} alt={place.name} width={400} height={600} className="rounded-lg" />
+        <Image src={place.photo} alt={place.name} width={400} height={500} className="rounded-lg" />
         {place.isPublish? (
             <p className="absolute top-0 right-0 w-full p-1 text-center text-white bg-green-600 rounded-t-lg">
                 Published</p>
@@ -82,6 +82,7 @@ export function CardPlace(props: CardPlaceProps){
               <span className="text-lg font-semibold">{place.rating}</span>
               <FaStar className="ml-1" />
             </div>
+            
             <button className="flex items-center justify-center bg-green-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">
               GO <FaSuitcase className="ml-1" />
             </button>

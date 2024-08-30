@@ -29,7 +29,7 @@ export function ListPlaces(props: ListPlacesProps) {
           return (
             <div key={id} className="p-1 rounded-3xl shadow-md hover:shadow-lg">
               <Link href={`/places/${id}`}>
-                <Image src={photo} alt={name} width={400} height={600} className="rounded-3xl" />
+                <Image src={photo} alt={name} width={400} height={500} className="rounded-3xl" />
                 <div className="p-3">
                   <div className="flex flex-col mb-3 gap-x-4">
                     <p className="text-xl min-h-16 lg:min-h-fit">{name}</p>
@@ -42,13 +42,13 @@ export function ListPlaces(props: ListPlacesProps) {
               </Link>
               <div className="flex flex-col px-3">
                 <div className="flex items-center justify-between">
-                  {/* Calificación a la izquierda */}
+                 
                   <div className="flex items-center text-yellow-500">
                     <span className="text-lg font-semibold">{rating}</span>
                     <FaStar className="ml-1" />
                   </div>
 
-                  {/* Botón GO centrado */}
+                
                   <div className="flex-1 flex justify-center">
                     <Link href={`/places/${id}`}>
                       <button
@@ -59,7 +59,7 @@ export function ListPlaces(props: ListPlacesProps) {
                     </Link>
                   </div>
 
-                  {/* Corazón a la derecha */}
+                  
                   {userId && (
                     <Heart
                       className={`cursor-pointer ${likedPlace && "fill-black"}`}
