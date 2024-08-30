@@ -24,13 +24,13 @@ import {
 import { useState } from "react"
 import { error } from "console"
 import { UploadButton } from "@/utils/uploadthing"
-import { FormAddCarProps } from "./FormAddPlace.types"
+import { FormAddPlaceProps } from "./FormAddPlace.types"
 import { toast } from "@/components/ui/use-toast"
 import axios from 'axios'
 import { useRouter } from "next/navigation"
   
 
-export function FormAddPlace(props: FormAddCarProps){
+export function FormAddPlace(props: FormAddPlaceProps){
   const {setOpenDialog}=props  
   const router = useRouter();
   const [photoUploaded,setPhotoUploaded]= useState(false)  
