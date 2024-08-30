@@ -152,7 +152,7 @@ export function FormEditPlace(props: FormEditPlaceProps){
             )}
           />
           </div>
-          <Button type="submit" className="w-full mt-5" disabled={!isValid}>Edit place</Button>
+          <Button type="submit" className="w-full mt-5" >Edit place</Button>
         </form>
       </Form>
     )
