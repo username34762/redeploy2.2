@@ -14,7 +14,8 @@ export default function ListLovedPlaces(){
     {lovedItems.length===0?(
         <h2>Your list is empty</h2>
     ):(
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        // Cambia las clases aquí para la responsividad
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {lovedItems.map((place: Place)=>{
                 const {photo,name,description,ubication,rating,id} = place;
 
