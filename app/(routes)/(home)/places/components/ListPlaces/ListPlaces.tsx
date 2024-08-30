@@ -33,7 +33,6 @@ export function ListPlaces(props: ListPlacesProps) {
                 <div className="p-3">
                   <div className="flex flex-col mb-3 gap-x-4">
                     <p className="text-xl min-h-16 lg:min-h-fit">{name}</p>
-                    
                   </div>
                   <p className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" strokeWidth={1} />
@@ -42,32 +41,33 @@ export function ListPlaces(props: ListPlacesProps) {
                 </div>
               </Link>
               <div className="flex flex-col px-3">
-                
                 <div className="flex items-center justify-between">
+                  {/* Calificación a la izquierda */}
                   <div className="flex items-center text-yellow-500">
                     <span className="text-lg font-semibold">{rating}</span>
                     <FaStar className="ml-1" />
                   </div>
-                  <Link href={`/places/${id}`}>
-                    <button
-                      className="flex items-center justify-center bg-green-500 text-white px-3 py-1 rounded-lg text-sm font-semibold"
-                    >
-                      GO <FaSuitcase className="ml-1" />
-                    </button>
-                  </Link>
-                </div>
-                
-               
-                {userId && (
-                  <div className="mt-2 self-end">
+
+                  {/* Botón GO centrado */}
+                  <div className="flex-1 flex justify-center">
+                    <Link href={`/places/${id}`}>
+                      <button
+                        className="flex items-center justify-center bg-green-500 text-white px-3 py-1 rounded-lg text-sm font-semibold"
+                      >
+                        GO <FaSuitcase className="ml-1" />
+                      </button>
+                    </Link>
+                  </div>
+
+                  {/* Corazón a la derecha */}
+                  {userId && (
                     <Heart
                       className={`cursor-pointer ${likedPlace && "fill-black"}`}
                       onClick={likedPlace ? () => removeLovedItem(place.id) : () => addLovedItem(place)}
                     />
-                  </div>
-                )}
+                  )}
+                </div>
 
-                
                 {!userId && (
                   <div className="mt-4 text-center">
                     <Link href="/sign-up">
