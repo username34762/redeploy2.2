@@ -44,7 +44,7 @@ export function FormEditPlace(props: FormEditPlaceProps){
           description: placeData.description,
           rating: placeData.rating,
           photo: placeData.photo,
-          category: placeData.category,
+          category: placeData.category ?? undefined,
           isPublish: placeData.isPublish ? placeData.isPublish : false,
 
         },
