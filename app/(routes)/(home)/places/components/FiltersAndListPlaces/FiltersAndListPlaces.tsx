@@ -37,9 +37,10 @@ export function FilterPlacesAndListPlaces(props: FilterPlacesProps) {
 
     if (filters.category) {
       filtered = filtered.filter((place) =>
-        place.category.toLowerCase().includes(filters.category.toLowerCase())
+        (place.category ?? '').toLowerCase().includes(filters.category.toLowerCase())
       );
     }
+    
 
     if (filters.rating) {
       filtered = filtered.filter(
