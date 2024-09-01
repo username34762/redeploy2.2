@@ -44,6 +44,7 @@ export function FormEditPlace(props: FormEditPlaceProps){
           description: placeData.description,
           rating: placeData.rating,
           photo: placeData.photo,
+          category: placeData.category,
           isPublish: placeData.isPublish ? placeData.isPublish : false,
 
         },
@@ -90,6 +91,20 @@ export function FormEditPlace(props: FormEditPlaceProps){
                 <FormLabel>Description</FormLabel>
                 <FormControl>
                   <Input placeholder="Imagine yourself in this place ❤️" {...field} />
+                </FormControl>
+                
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Category</FormLabel>
+                <FormControl>
+                  <Input placeholder="River" {...field} />
                 </FormControl>
                 
                 <FormMessage />

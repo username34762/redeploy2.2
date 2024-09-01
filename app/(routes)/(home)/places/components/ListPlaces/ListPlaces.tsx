@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Place } from "@prisma/client";
 import Image from "next/image";
 import { FaStar, FaSuitcase } from 'react-icons/fa';
-import { MapPin, Heart } from "lucide-react";
+import { MapPin, Heart, Tag } from "lucide-react";
 import { ListPlacesProps } from "./ListPlaces.types";
 import Link from "next/link";
 import { useLovedPlaces } from "@/hooks/use-loved-places";
@@ -23,7 +23,7 @@ export function ListPlaces(props: ListPlacesProps) {
       {places.length === 0 && <p>Places not found</p>}
       <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-4">
         {places.map((place: Place) => {
-          const { photo, id, name, description, rating, ubication } = place;
+          const { photo, id, name, description, rating, ubication,category } = place;
           const likedPlace = lovedItems.some((item) => item.id === place.id);
 
           return (
@@ -39,6 +39,10 @@ export function ListPlaces(props: ListPlacesProps) {
                   <p className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" strokeWidth={1} />
                     {ubication}
+                  </p>
+                  <p className="flex items-center mb-1">
+                    <Tag className="h-4 w-4 mr-2" strokeWidth={1} />
+                    {category}
                   </p>
                 </div>
               </Link>

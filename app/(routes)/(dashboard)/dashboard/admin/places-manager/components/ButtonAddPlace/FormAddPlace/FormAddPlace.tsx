@@ -43,6 +43,7 @@ export function FormAddPlace(props: FormAddPlaceProps){
           rating: "",
           photo: "",
           isPublish: false,
+          category:"",
 
         },
       })
@@ -91,6 +92,20 @@ export function FormAddPlace(props: FormAddPlaceProps){
                 <FormLabel>Description</FormLabel>
                 <FormControl>
                   <Input placeholder="Imagine yourself in this place ❤️" {...field} />
+                </FormControl>
+                
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Category</FormLabel>
+                <FormControl>
+                  <Input placeholder="River" {...field} />
                 </FormControl>
                 
                 <FormMessage />

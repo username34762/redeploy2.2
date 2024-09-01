@@ -15,12 +15,17 @@ model Place {
   description String
   ubication   String
   photo       String
+  department  String?
+  category    String?
   rating      String
   isPublish   Boolean?
+  
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   tours       Tour[]
 }
+
+
 
 model Tour {
   id          String   @id @default(uuid())

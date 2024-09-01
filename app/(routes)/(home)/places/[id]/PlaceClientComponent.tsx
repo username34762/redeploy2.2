@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 import { Button } from '@nextui-org/button';
-import { MapPin, Heart } from 'lucide-react';
+import { MapPin, Heart, Tag } from 'lucide-react';
 import { NavBar } from '@/components/Shared/NavBar';
 import Link from "next/link";
 import { useLovedPlaces } from "@/hooks/use-loved-places";
@@ -105,9 +105,13 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
       onClick={likedPlace ? () => removeLovedItem(place.id) : () => addLovedItem(place)}
     />
   </div>
-  <p className="flex items-center mb-6">
+  <p className="flex items-center mb-2">
     <MapPin className="h-4 w-4 mr-2" strokeWidth={1} />
     {place.ubication}
+  </p>
+  <p className="flex items-center mb-6">
+    <Tag className="h-4 w-4 mr-2" strokeWidth={1} />
+    {place.category}
   </p>
   
   <Button className="w-full py-2 rounded-3xl mt-6 bg-[#4fb350]" variant="ghost" onClick={handleGoClick}>

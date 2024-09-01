@@ -1,7 +1,7 @@
 import { NavBar } from "@/components/Shared/NavBar";
 import { db } from "@/lib/db";
 import HeaderPlaces from "./components/HeaderPlaces/HeaderPlaces";
-import { FiltersAndListPlaces } from "./components/HeaderPlaces/FiltersAndListPlaces";
+import { FilterPlacesAndListPlaces } from "./components/FiltersAndListPlaces";
 
 export default async function pagePlaces(){
     const places = await db.place.findMany({
@@ -19,7 +19,7 @@ export default async function pagePlaces(){
         <div className="p-6 mx-auto max-w-7xl">
             <HeaderPlaces/>
             <div>
-            <FiltersAndListPlaces places={places}/>
+            <FilterPlacesAndListPlaces places={places}/>
             </div>
         </div>
         </div>
