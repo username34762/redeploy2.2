@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useEffect, useState } from "react";
 import {
   Select,
@@ -16,7 +16,6 @@ import { Place } from "@prisma/client";
 import { ListPlaces } from "../ListPlaces";
 import { FiltersPlaces } from "../FiltersPlaces";
 
-
 export function FilterPlacesAndListPlaces(props: FilterPlacesProps) {
   const { places } = props;
   const [filteredPlaces, setFilteredPlaces] = useState<Place[]>(places || []);
@@ -24,10 +23,18 @@ export function FilterPlacesAndListPlaces(props: FilterPlacesProps) {
     ubication: "",
     category: "",
     rating: "",
+    search: "",
   });
 
   useEffect(() => {
     let filtered = places;
+
+    if (filters.search) {
+      filtered = filtered.filter(place =>
+        place.name.toLowerCase().includes(filters.search.toLowerCase()) ||
+        (place.description ?? '').toLowerCase().includes(filters.search.toLowerCase())
+      );
+    }
 
     if (filters.ubication) {
       filtered = filtered.filter((place) =>
@@ -41,7 +48,6 @@ export function FilterPlacesAndListPlaces(props: FilterPlacesProps) {
       );
     }
     
-
     if (filters.rating) {
       filtered = filtered.filter(
         (place) => place.rating.toString() === filters.rating
@@ -49,27 +55,31 @@ export function FilterPlacesAndListPlaces(props: FilterPlacesProps) {
     }
 
     setFilteredPlaces(filtered);
-  }, [filters,places]);
-const handleFilterChange = (filterName: string,filterValue: string)=>{
-setFilters((prevFilters)=>({
-    ...prevFilters,
-    [filterName]: filterValue
-}));
-}
-const clearFilters = ()=>{
+  }, [filters, places]);
+
+  const handleFilterChange = (filterName: string, filterValue: string) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [filterName]: filterValue
+    }));
+  };
+
+  const clearFilters = () => {
     setFilters({
-        ubication: "",
-        category: "",
-        rating: "",   
-    })
-}
+      ubication: "",
+      category: "",
+      rating: "",
+      search: "",
+    });
+  };
 
   return (
-   <div>
-    <FiltersPlaces
-    setFilters={handleFilterChange}
-    clearFilters={clearFilters} />
-    <ListPlaces places={filteredPlaces}/>
-   </div>
+    <div>
+      <FiltersPlaces
+        setFilters={handleFilterChange}
+        clearFilters={clearFilters}
+      />
+      <ListPlaces places={filteredPlaces} />
+    </div>
   );
 }

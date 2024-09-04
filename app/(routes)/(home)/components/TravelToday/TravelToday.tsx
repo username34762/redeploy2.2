@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/Shared/Reveal"
 import { Button } from "@nextui-org/button"
+import { Facebook } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -14,6 +15,7 @@ export default function TavelToday(){
                     <Link href="/sign-up">
                     <Button variant='ghost' size="lg" className="text-white">Register here</Button>
                     </Link>
+                    <p className="mt-6 font-semibold text-white">All rights reserved ©</p>
                 </div>
                 <Reveal classname="lg:absolute lg:-right-31 top-5" position="bottom">
                 <Image src="/images/image9.png" alt="Place" width={550} height={250}/>

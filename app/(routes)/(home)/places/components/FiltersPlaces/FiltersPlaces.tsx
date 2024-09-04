@@ -6,11 +6,15 @@ import { Button } from '@nextui-org/button';
 
 export function FiltersPlaces({ clearFilters, setFilters }: FilterPlacesProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   const handleFilter = (filter: string, value: string) => {
     setFilters(filter, value);
   };
-
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setFilters('search', e.target.value); // Enviar el texto de búsqueda a los filtros
+  };
   const handleClearFilters = () => {
     setIsOpen(true);
     setTimeout(() => {
@@ -21,6 +25,13 @@ export function FiltersPlaces({ clearFilters, setFilters }: FilterPlacesProps) {
 
   return (
     <div className="flex flex-wrap mt-5 mb-8 gap-4">
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={handleSearchChange}
+        placeholder="Search places..."
+        className="border rounded-md p-2 w-[180px]"
+      />
       <Select onValueChange={(value) => handleFilter('ubication', value)}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Department" />
