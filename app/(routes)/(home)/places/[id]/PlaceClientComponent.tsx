@@ -234,7 +234,7 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
             )}
       
       <Link
-        href="https://github.com/nextui-org/nextui"
+        href="https://forms.office.com/Pages/ResponsePage.aspx?id=RL3j2LoLa0KVLa2nuxc5PECLSitui9NJpXmMy0L5pUBUNzhLUVZHTTZHQlM0U0NaRVVRWTFJNEdBSS4u&embed=true"
         isExternal
         showAnchorIcon
         className="mt-6 text-center text-blue-500 hover:underline" 
