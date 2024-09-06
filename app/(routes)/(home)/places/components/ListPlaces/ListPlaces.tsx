@@ -77,7 +77,7 @@ export function ListPlaces(props: ListPlacesProps) {
                 {!userId && (
                   <div className="mt-4 text-center">
                     <Link href="/sign-up">
-                      <Button variant="outline" className="w-full rounded-3xl">Sign Up</Button>
+                      <Button variant="outline" className="w-full rounded-3xl">View more</Button>
                     </Link>
                   </div>
                 )}

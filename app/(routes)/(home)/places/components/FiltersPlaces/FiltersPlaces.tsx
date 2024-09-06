@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Trash } from 'lucide-react';
+import { Plus, Trash } from 'lucide-react';
 import { FilterPlacesProps } from './FiltersPlaces.types';
 import { Button } from '@nextui-org/button';
+import Link from 'next/link';
 
 export function FiltersPlaces({ clearFilters, setFilters }: FilterPlacesProps) {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -107,6 +108,16 @@ export function FiltersPlaces({ clearFilters, setFilters }: FilterPlacesProps) {
           <Trash className="w-4 h-4" />
         </div>
       </Button>
+      <Link href="https://forms.office.com/Pages/ResponsePage.aspx?id=RL3j2LoLa0KVLa2nuxc5PECLSitui9NJpXmMy0L5pUBURVBPRzY2QVJUS0c0QzlVSkNXQk1IMTBaTS4u&embed=true">
+      <Button
+        variant="ghost"
+        className="bg-gradient-to-tr from-[#1a2e05] to-[#052e16] text-white shadow-lg"
+      >
+        Add your place
+        <Plus/>
+         </Button>
+         </Link>
+      
     </div>
   );
 }

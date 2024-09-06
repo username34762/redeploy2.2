@@ -11,12 +11,15 @@ import { Place } from "@prisma/client";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import Home from '@/app/page';
 import {Link} from "@nextui-org/react";
-import Rating from './rainting';
+
+
+
 
 
 export default function PlaceClientComponent({ place }: { place: Place }) {
   const { addLovedItem, lovedItems, removeLovedItem } = useLovedPlaces();
   const likedPlace = lovedItems.some((item) => item.id === place.id);
+  const { userId } = useAuth();
   
   
   const availability = [
@@ -213,12 +216,22 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
   
             
             <div className="flex flex-col items-center"> 
-      <Link href="../home">
+            {userId && (
+      <Link href='./LocalDrivers/LocalDrivers'>
         <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
           Drivers available
           <Car className='ml-2' />
         </Button>
       </Link>
+            )}
+            {!userId && (
+      <Link href='/sign-up'>
+        <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
+          Drivers available
+          <Car className='ml-2' />
+        </Button>
+      </Link>
+            )}
       
       <Link
         href="https://github.com/nextui-org/nextui"
