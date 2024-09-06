@@ -216,22 +216,22 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
   
             
             <div className="flex flex-col items-center"> 
-            {userId && (
-      <Link href='./LocalDrivers/LocalDrivers'>
-        <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
-          Drivers available
-          <Car className='ml-2' />
-        </Button>
-      </Link>
-            )}
-            {!userId && (
-      <Link href='/sign-up'>
-        <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
-          Drivers available
-          <Car className='ml-2' />
-        </Button>
-      </Link>
-            )}
+            {userId ? (
+  <Link href='./LocalDrivers/LocalDrivers'>
+    <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
+      Drivers available
+      <Car className='ml-2' />
+    </Button>
+  </Link>
+) : (
+  <Link href={`/sign-up?redirect=/LocalDrivers/LocalDrivers`}>
+    <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
+      Drivers available
+      <Car className='ml-2' />
+    </Button>
+  </Link>
+)}
+
       
       <Link
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=RL3j2LoLa0KVLa2nuxc5PECLSitui9NJpXmMy0L5pUBUNzhLUVZHTTZHQlM0U0NaRVVRWTFJNEdBSS4u&embed=true"

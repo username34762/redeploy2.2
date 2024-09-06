@@ -1,3 +1,4 @@
-export const isAdministrator = (userId: string | null | undefined)=>{
-    return userId === process.env.NEXT_PUBLIC_ADMINISTRATOR
+export const isAdministrator = (userId: string | null | undefined) => {
+    const administrators = process.env.NEXT_PUBLIC_ADMINISTRATORS?.split(',') || [];
+    return administrators.includes(userId || '');
 }
