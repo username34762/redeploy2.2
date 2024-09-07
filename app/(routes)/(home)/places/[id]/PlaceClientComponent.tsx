@@ -52,10 +52,8 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
     window.open(mapsUrl, '_blank');
   };
 
-  // Función para manejar las clases de los tabs
-  const getTabClassName = (isSelected: boolean, activeColor: string) => {
-    return isSelected ? `text-bold ${activeColor}` : 'text-gray-500';
-  };
+  
+  
 
   return (
     <>

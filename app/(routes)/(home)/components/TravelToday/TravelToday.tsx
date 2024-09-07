@@ -3,10 +3,12 @@ import { Button } from "@nextui-org/button"
 import { Facebook } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useAuth } from "@clerk/nextjs"
+import { useAuth } from "@clerk/nextjs";
+
 
 export default function TavelToday(){
-    const { userId } = useAuth();
+   
+
     return(
         <div className="p-6 lg:my-32 max-w-7xl mx-auto">
             <div className="bg-[url('/images/background.jpg')] bg-center bg-no-repeat bg-cover rounded-xl p-6 lg:p-32 relative">
@@ -14,11 +16,11 @@ export default function TavelToday(){
                 <div>
                     <h3 className="text-4xl text-white">Travel to your favorite place TODAY</h3>
                     <p className="text-white text-xl my-5">Register and explore the best places of El Salvador</p>
-                    {(!userId && 
+                     
                     <Link href="/sign-up">
                     <Button variant='ghost' size="lg" className="text-white">Register here</Button>
                     </Link>
-                    )}
+                    
                    
                     <p className="mt-6 font-semibold text-white">All rights reserved ©</p>
                 </div>
