@@ -5,6 +5,7 @@ import { Heart, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { isAdministrator } from "@/lib/isAdministrator";
+import { Tooltip } from "@nextui-org/react";
 
 export function NavBar(){
     const { userId } = useAuth();
@@ -28,10 +29,17 @@ export function NavBar(){
 
                     {userId ? (
                         <>
+                        <Tooltip placement="bottom" content={
+        <div className="px-1 py-2">
+          <div className="text-small font-bold text-red-600">Loved Places</div>
+        </div>
+      } showArrow={true} color="secondary" >
                             <Link href="/loved-places">
                                 <Heart strokeWidth={1} className={`cursor-pointer`} />
                             </Link>
+                            </Tooltip>
                             <UserButton />
+                            
                         </>
                     ) : (
                         <Link href="/sign-in" className="flex gap-x-3">

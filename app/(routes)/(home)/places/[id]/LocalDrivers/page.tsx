@@ -23,7 +23,7 @@ export default function LocalDrivers() {
             />
           </div>
 
-          {/* Información del vehículo */}
+          
           <div className="sm:w-2/3 p-4">
             <h2 className="text-lg font-semibold">Nissan Altima 2018</h2>
             <ul className="mt-2 space-y-2">
@@ -33,7 +33,7 @@ export default function LocalDrivers() {
               </p>
               <p className="flex items-center">
                 <PersonStanding className="h-4 w-4 mr-2" strokeWidth={1} />
-                Enough space (4 persons)
+                Enough space (4 people)
               </p>
               <p className="flex items-center">
                 <Music4 className="h-4 w-4 mr-2" strokeWidth={1} />

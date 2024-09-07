@@ -16,6 +16,7 @@ import {Link} from "@nextui-org/react";
 
 
 
+
 export default function PlaceClientComponent({ place }: { place: Place }) {
   const { addLovedItem, lovedItems, removeLovedItem } = useLovedPlaces();
   const likedPlace = lovedItems.some((item) => item.id === place.id);
