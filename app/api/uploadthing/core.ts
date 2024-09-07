@@ -13,7 +13,7 @@ export const ourFileRouter: FileRouter = {
   photo: f({
     image: {
       maxFileSize: "4MB",
-      maxFileCount: 1
+      maxFileCount: 3
     }
   })
   .middleware(() => handleAuth())

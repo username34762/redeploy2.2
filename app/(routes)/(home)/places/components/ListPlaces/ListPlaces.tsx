@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Place } from "@prisma/client";
 import Image from "next/image";
@@ -8,12 +9,13 @@ import Link from "next/link";
 import { useLovedPlaces } from "@/hooks/use-loved-places";
 import { useAuth } from "@clerk/nextjs";
 import { SkeletonPlaces } from "@/components/Shared/SkeletonPlaces";
+import { useUser } from "@clerk/nextjs";
 
 export function ListPlaces(props: ListPlacesProps) {
   const { places } = props;
   const { userId } = useAuth();
   const { addLovedItem, lovedItems, removeLovedItem } = useLovedPlaces();
-
+  const {user} = useUser();
   if (!places) {
     return <SkeletonPlaces />;
   }
@@ -21,6 +23,7 @@ export function ListPlaces(props: ListPlacesProps) {
   return (
     <>
       {places.length === 0 && <p>Places not found</p>}
+      
       <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-4">
         {places.map((place: Place) => {
           const { photo, id, name, description, rating, ubication,category } = place;
