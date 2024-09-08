@@ -1,27 +1,27 @@
 export const dataBrands =[
     {
-        url: "icon1.png"
+        url: "eltunco.jpg"
     },
     {
-        url: "icon2.png"
+        url: "el-salvador.jpg"
     },
     {
-        url: "icon3.png"
+        url: "volcan.jpg"
     },
     {
-        url: "icon4.png"
+        url: "lago.png"
     },
     {
-        url: "icon5.png"
+        url: "parque.jpg"
     },
     {
-        url: "icon6.png"
+        url: "rio.jpg"
     },
     {
-        url: "icon7.png"
+        url: "iglesia.jpg"
     },
     {
-        url: "icon8.png"
+        url: "mirador.jpg"
     }
 
     

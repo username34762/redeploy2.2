@@ -1,26 +1,48 @@
-"use client";
-import React from "react";
+"use client"
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import React from 'react';
 import { dataBrands } from "./SliderBrands.data";
-import { Reveal } from "@/components/Shared/Reveal";
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay/components/Autoplay";
 
 export function SliderBrands() {
+  
+  
   return (
-    <Reveal 
-      position="bottom" 
-      classname="gap-x-20 flex justify-center lg:pb-20 mt-5 mb-10 relative z-20"
-    >
-      <Carousel className="w-full max-w-6xl mx-auto sm:mb-20" plugins={[Autoplay({ delay: 2500 })]}>
-        <CarouselContent>
-          {dataBrands.map(({ url }) => (
-            <CarouselItem key={url} className="basis-4/4 md:basis-2/4 lg:basis-1/6">
-              <Image src={`/images/brands/${url}`} alt="Brand" width={90} height={90} className="object-contain aspect-[3/2]" />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-    </Reveal>
-  );
+    <div className="w-full flex justify-center">
+    <Carousel className="w-full max-w-3xl"
+   
+   opts={{
+      loop: true,
+    }}>
+    <CarouselContent>
+    {dataBrands.map(({ url }) => (
+        <CarouselItem key={url} className="md:basis-1/2 lg:basis-1/3">
+          <div className="p-1">
+           <Link href="/places">
+              <Image 
+    src={`/images/brands/${url}`} 
+    alt="Brand" 
+    width={300} 
+    height={250} className="rounded-xl object-cover aspect-[3/2] "
+  />
+              </Link>
+          </div>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
+  </div>
+      
+  )
 }

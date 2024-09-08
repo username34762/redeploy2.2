@@ -4,11 +4,21 @@ import { Plus, Trash } from 'lucide-react';
 import { FilterPlacesProps } from './FiltersPlaces.types';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 export function FiltersPlaces({ clearFilters, setFilters }: FilterPlacesProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState('');
-
+ 
+const searchParams = useSearchParams();
+  const category = searchParams.get('category');
+  React.useEffect(() => {
+    if (category) {
+      setFilters('category', category as string); 
+    }
+  }, [category]);
+  
+  
   const handleFilter = (filter: string, value: string) => {
     setFilters(filter, value);
   };
@@ -64,11 +74,11 @@ export function FiltersPlaces({ clearFilters, setFilters }: FilterPlacesProps) {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>The best Categories</SelectLabel>
-            <SelectItem value="River">River</SelectItem>
-            <SelectItem value="Mountain">Mountain</SelectItem>
-            <SelectItem value="Lake">Lake</SelectItem>
-            <SelectItem value="Lagoon">Lagoon</SelectItem>
-            <SelectItem value="Beach">Beach</SelectItem>
+            <SelectItem value="River">Rivers</SelectItem>
+            <SelectItem value="Mountain">Mountains</SelectItem>
+            <SelectItem value="Lake">Lakes</SelectItem>
+            <SelectItem value="Lagoon">Lagoons</SelectItem>
+            <SelectItem value="Beach">Beaches</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

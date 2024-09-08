@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from 'next/navigation';
 import { Button } from "@nextui-org/button";
 import { MoveRight } from "lucide-react";
 import { categoryOurPlaces, dataFirstBlockOurCategories, dataSecondBlockOurCategories } from "./OurPlacesCategories.data";
@@ -6,6 +8,12 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export function OurPlacesCategories() {
+  const router = useRouter();
+
+  const handleCategorySelect = (category: string) => {
+    router.push(`/places?category=${encodeURIComponent(category)}`);
+  };
+
   return (
     <div className="max-w-6xl mx-auto text-center py-12 lg:py-24 px-6">
       <h3 className="text-3xl md:text-4xl lg:text-6xl font-bold">Our Categories</h3>
@@ -16,7 +24,8 @@ export function OurPlacesCategories() {
         {categoryOurPlaces.map(({ name, active }) => (
           <div
             key={name}
-            className={cn("rounded-xl py-2 px-4 text-base md:text-lg", active ? 'bg-black text-white' : 'bg-slate-100')}
+            onClick={() => handleCategorySelect(name)} // Llamada al seleccionar
+            className={cn("rounded-xl py-2 px-4 text-base md:text-lg cursor-pointer", active ? 'bg-black text-white' : 'bg-slate-100')}
           >
             {name}
           </div>

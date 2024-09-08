@@ -1,26 +1,26 @@
 export const categoryOurPlaces =[
     {
-        name: "Mountains",
+        name: "Mountain",
         active: false
     },
     {
-        name: "Beaches",
+        name: "Beach",
         active: true
     },
     {
-        name: "Lakes",
+        name: "Lake",
         active: false
     },
     {
-        name: "Rivers",
+        name: "River",
         active: false
     },
     {
-        name: "Lagoons",
+        name: "Lagoon",
         active: true
     },
     {
-        name: "Archaeological sites",
+        name: "Archaeological site",
         active: false
     },
 ]
