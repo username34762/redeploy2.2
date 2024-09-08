@@ -79,6 +79,7 @@ const searchParams = useSearchParams();
             <SelectItem value="Lake">Lakes</SelectItem>
             <SelectItem value="Lagoon">Lagoons</SelectItem>
             <SelectItem value="Beach">Beaches</SelectItem>
+            <SelectItem value="Park">Parks</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

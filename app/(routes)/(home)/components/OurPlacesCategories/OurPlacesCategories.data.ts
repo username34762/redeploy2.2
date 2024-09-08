@@ -23,6 +23,10 @@ export const categoryOurPlaces =[
         name: "Archaeological site",
         active: false
     },
+    {
+        name:"Park",
+        active: true
+    },
 ]
 export const dataFirstBlockOurCategories = [
     {
