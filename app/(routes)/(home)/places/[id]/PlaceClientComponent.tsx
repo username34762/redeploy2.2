@@ -217,21 +217,21 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
             <div className="flex flex-col items-center"> 
             {userId ? (
   <Link href='./LocalDrivers/LocalDrivers'>
-    <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
+    <Button className='rounded-xl w-full bg-slate-900 mt-3 text-white py-2' variant='ghost'>
       Drivers available
       <Car className='ml-2' />
     </Button>
   </Link>
 ) : (
   <Link href={`/sign-up?redirect=/LocalDrivers/LocalDrivers`}>
-    <Button className='rounded-xl w-[350px] bg-slate-900 mt-3 text-white' variant='ghost'>
+    <Button className='rounded-xl w-full bg-slate-900 mt-3 text-white py-2' variant='ghost'>
       Drivers available
       <Car className='ml-2' />
     </Button>
   </Link>
 )}
 
-      
+      {userId ? ( 
       <Link
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=RL3j2LoLa0KVLa2nuxc5PECLSitui9NJpXmMy0L5pUBUNzhLUVZHTTZHQlM0U0NaRVVRWTFJNEdBSS4u&embed=true"
         isExternal
@@ -240,6 +240,16 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
       >
         Add your tour now!
       </Link>
+      ):(
+        <Link
+        href="/sign-up"
+        isExternal
+        showAnchorIcon
+        className="mt-6 text-center text-blue-500 hover:underline" 
+      >
+        Sign up to add your tour!
+      </Link>
+      )}
     </div>
     
           </div>
