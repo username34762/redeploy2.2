@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/toaster"
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Admin Tours",
+  title: "DINAtours",
   description: "Expo Proyect",
 };
 

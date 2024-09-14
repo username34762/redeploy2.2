@@ -91,6 +91,7 @@ const searchParams = useSearchParams();
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Best Ratings</SelectLabel>
+            <SelectItem value="4.0">4</SelectItem>
             <SelectItem value="4.1">4.1</SelectItem>
             <SelectItem value="4.2">4.2</SelectItem>
             <SelectItem value="4.3">4.3</SelectItem>

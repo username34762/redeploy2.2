@@ -16,9 +16,17 @@ export default function TravelToday() {
                 <div className="lg:flex gap-x-6">
                     <div>
                         <h3 className="text-4xl text-white">Travel to your favorite place TODAY</h3>
+                        {!userId ?(
+                            <>
                         <p className="text-white text-xl my-5">
                             Register and explore the best places of El Salvador
                         </p>
+                        </>
+                        ):(
+                            <p className="text-white text-xl my-5">
+                                Discover what El Salvador is really all about!
+                            </p>
+                        )}
 
                        
                         {!userId && (

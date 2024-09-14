@@ -8,7 +8,8 @@ export default function FirstBlock() {
         classname="p-6 lg:pl-16 flex flex-col justify-center"
         position="bottom"
       >
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
+    
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold sm:text-center  ">
           Places
           <span className="block text-xl md:text-2xl lg:text-3xl">
             in El Salvador
@@ -23,14 +24,16 @@ export default function FirstBlock() {
         classname="flex justify-center items-center mt-6 lg:mt-0"
         position="right"
       >
-        <Image
-          src="/images/elsalvador.jpeg"
-          alt="Vista panorámica de un parque de diversiones en El Salvador al atardecer"
-          height={400}
-          width={600}
-          priority
-          className="rounded-3xl object-cover"
-        />
+        <div className="flex justify-center items-center w-full">
+          <Image
+            src="/images/elsalvador.jpeg"
+            alt="Vista panorámica de un parque de diversiones en El Salvador al atardecer"
+            height={400}
+            width={600}
+            priority
+            className="rounded-3xl object-cover"
+          />
+        </div>
       </Reveal>
     </div>
   );

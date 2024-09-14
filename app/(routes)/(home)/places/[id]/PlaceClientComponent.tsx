@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 import { Button } from '@nextui-org/button';
-import { MapPin, Heart, Tag , CalendarX, Car, Flag, AlarmCheck, Citrus, Cross, Check} from 'lucide-react';
+import { MapPin, Heart, Tag , CalendarX, Car, Flag, AlarmCheck, Citrus, Cross, Check, Plus} from 'lucide-react';
 import { NavBar } from '@/components/Shared/NavBar';
 
 import { useLovedPlaces } from "@/hooks/use-loved-places";
@@ -214,27 +214,35 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
             </ul>
   
             
-            <div className="flex flex-col items-center"> 
+            <div className="flex space-x-4 mt-3 "> 
             {userId ? (
-  <Link href='./LocalDrivers/LocalDrivers'>
+  <Link href='./LocalDrivers/LocalDrivers' target='_blank'>
     <Button className='rounded-xl w-full bg-slate-900 mt-3 text-white py-2' variant='ghost'>
       Drivers available
       <Car className='ml-2' />
     </Button>
   </Link>
 ) : (
-  <Link href={`/sign-up?redirect=/LocalDrivers/LocalDrivers`}>
+  <Link href={`/sign-up?redirect=/LocalDrivers/LocalDrivers`} target='_blank'>
     <Button className='rounded-xl w-full bg-slate-900 mt-3 text-white py-2' variant='ghost'>
       Drivers available
       <Car className='ml-2' />
     </Button>
   </Link>
 )}
-
+<Link href={`https://forms.office.com/r/GL3q7Z4cyV?embed=true`} target='_blank'>
+    <Button className='rounded-xl w-full bg-slate-900 mt-3 text-white py-2' variant='ghost'>
+      Add your car
+      <Plus className='ml-2' />
+    </Button>
+  </Link>
+  </div>
+    <div className='mt-3 flex items-center justify-center'>
       {userId ? ( 
       <Link
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=RL3j2LoLa0KVLa2nuxc5PECLSitui9NJpXmMy0L5pUBUNzhLUVZHTTZHQlM0U0NaRVVRWTFJNEdBSS4u&embed=true"
         isExternal
+        target='_blank'
         showAnchorIcon
         className="mt-6 text-center text-blue-500 hover:underline" 
       >
@@ -243,6 +251,7 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
       ):(
         <Link
         href="/sign-up"
+        target='_blank'
         isExternal
         showAnchorIcon
         className="mt-6 text-center text-blue-500 hover:underline" 
@@ -250,7 +259,8 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
         Sign up to add your tour!
       </Link>
       )}
-    </div>
+      </div>
+    
     
           </div>
         </div>

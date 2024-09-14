@@ -12,10 +12,10 @@ export function NavBar(){
     return (
         <div className=" py-5 mx-auto">
             <div className="justify-between lg:flex">
-                <Link href="/" className="flex items-center justify-center ">
-                    <Image src="/logo1.png" alt="Dinatours" width={225} height={79}  className="ml-11"/>
+                <Link href="/" className="flex items-center justify-center mx-auto lg:ml-11  ">
+                    <Image src="/logo1.png" alt="Dinatours" width={225} height={79}  />
                 </Link>
-                <div className="flex items-center justify-center gap-x-7 mr-8">
+                <div className="flex items-center justify-center gap-x-7 mx-auto lg:mr-8">
                     <Link href="/places" className="relative after:bg-[#4fb350] after:absolute after:h-0.5 after:rounded-full after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300">
                         List Places
                     </Link>
