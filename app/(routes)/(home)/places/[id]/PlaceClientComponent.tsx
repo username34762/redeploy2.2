@@ -214,7 +214,7 @@ export default function PlaceClientComponent({ place }: { place: Place }) {
             </ul>
   
             
-            <div className="flex space-x-4 mt-3 "> 
+            <div className="flex space-x-4 mt-3 md:block "> 
             {userId ? (
   <Link href='./LocalDrivers/LocalDrivers' target='_blank'>
     <Button className='rounded-xl w-full bg-slate-900 mt-3 text-white py-2' variant='ghost'>

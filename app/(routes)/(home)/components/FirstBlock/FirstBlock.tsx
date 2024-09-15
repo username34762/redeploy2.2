@@ -5,7 +5,7 @@ export default function FirstBlock() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-0 lg:py-24 items-center overflow-hidden lg:mt-0 lg:pt-12 gap-6">
       <Reveal
-        classname="p-6 lg:pl-16 flex flex-col justify-center"
+        classname="p-4 lg:pl-16 flex flex-col justify-center"
         position="bottom"
       >
     
@@ -15,15 +15,12 @@ export default function FirstBlock() {
             in El Salvador
           </span>
         </h1>
-        <p className="text-base md:text-lg lg:text-xl mt-2 lg:mt-2 max-w-md lg:max-w-lg">
+        <p className="text-base md:text-lg lg:text-xl mt-2 lg:mt-2 max-w-md lg:max-w-lg md:mb-4 ">
          El Salvador is more than just beaches. It`s a country full of hidden treasures waiting 
          to be explored. Discover unique places where nature and culture meet. Start your journey and see the real El Salvador
         </p>
       </Reveal>
-      <Reveal
-        classname="flex justify-center items-center mt-6 lg:mt-0 md:mt-3 sm:mt-5"
-        position="right"
-      >
+      
         <div className="flex justify-center items-center w-full md:justify-center md:flex">
           <Image
             src="/images/elsalvador.jpeg"
@@ -34,7 +31,7 @@ export default function FirstBlock() {
             className="rounded-3xl object-cover"
           />
         </div>
-      </Reveal>
+      
     </div>
   );
 }
