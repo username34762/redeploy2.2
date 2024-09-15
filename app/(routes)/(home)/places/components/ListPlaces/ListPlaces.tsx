@@ -31,7 +31,7 @@ export function ListPlaces(props: ListPlacesProps) {
 
           return (
             <div key={id} className="p-1 rounded-3xl shadow-md hover:shadow-lg">
-              <Link href={`/places/${id}`}>
+              
               <div className="h-[200px] overflow-hidden rounded-3xl">
                   <Image src={photo} alt={name} width={400} height={200} className="object-cover w-full h-full" />
                 </div>
@@ -48,7 +48,7 @@ export function ListPlaces(props: ListPlacesProps) {
                     {category}
                   </p>
                 </div>
-              </Link>
+              
               <div className="flex flex-col px-3">
                 <div className="flex items-center justify-between">
                  
