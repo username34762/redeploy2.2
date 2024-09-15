@@ -29,7 +29,7 @@ export function SliderBrands() {
     ]}>
     <CarouselContent>
     {dataBrands.map(({ url }) => (
-        <CarouselItem key={url} className="md:basis-1/2 lg:basis-1/3">
+        <CarouselItem key={url} className="md:basis-1/4 lg:basis-1/3">
           <div className="p-1">
            <Link href="/places">
               <Image 
@@ -43,8 +43,8 @@ export function SliderBrands() {
         </CarouselItem>
       ))}
     </CarouselContent>
-    <CarouselPrevious className="hidden sm:flex justify-center items-center"/>
-    <CarouselNext className="hidden sm:flex justify-center items-center"/>
+    <CarouselPrevious className="hidden sm:flex md:flex justify-center items-center"/>
+    <CarouselNext className="hidden sm:flex md:flex justify-center items-center"/>
   </Carousel>
   </div>
       

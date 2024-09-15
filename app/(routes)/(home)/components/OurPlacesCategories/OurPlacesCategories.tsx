@@ -32,7 +32,7 @@ export function OurPlacesCategories() {
         ))}
       </div>
       <div className="mb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-6 mb-6">
           {dataFirstBlockOurCategories.map(({ url }) => (
             <div key={url} className="overflow-hidden rounded-xl">
               <Image
@@ -45,7 +45,7 @@ export function OurPlacesCategories() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {dataSecondBlockOurCategories.map(({ url }) => (
             <div key={url} className="overflow-hidden rounded-xl">
               <Image
