@@ -50,9 +50,9 @@ export default function TravelToday() {
                         </Link>
                         </div>
                     </div>
-                    <Reveal classname="lg:absolute lg:-right-31 md:-right-0 top-5" position="bottom">
+                    
                         <Image src="/images/salvador.png" alt="Place" width={550} height={250} />
-                    </Reveal>
+                
                 </div>
             </div>
         </div>

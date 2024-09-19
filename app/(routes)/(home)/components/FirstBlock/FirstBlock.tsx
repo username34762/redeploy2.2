@@ -9,13 +9,13 @@ export default function FirstBlock() {
         position="bottom"
       >
     
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold ">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold md:justify-center md:text-center md:mb-5">
           Places
           <span className="block text-xl md:text-2xl lg:text-3xl">
             in El Salvador
           </span>
         </h1>
-        <p className="text-base md:text-lg lg:text-xl mt-2 lg:mt-2 max-w-md lg:max-w-lg md:mb-4 ">
+        <p className="text-base md:text-lg lg:text-xl mt-2 lg:mt-2 max-w-md lg:max-w-lg md:mb-20 md:justify-center md:text-center md:flex md:mx-auto ">
          El Salvador is more than just beaches. It`s a country full of hidden treasures waiting 
          to be explored. Discover unique places where nature and culture meet. Start your journey and see the real El Salvador
         </p>
